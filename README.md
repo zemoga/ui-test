@@ -24,7 +24,7 @@ Requirements:
 Just add interaction in the middle voting boxes: Kanye West, Mark Zuckerberg, Cristina Fernández de Kirchner and Malala Yousafzai.
 
 Requirements:
-- [x] Create a data feed in JSON format with the structure that best suits the data for the voting boxes.
+- [x] Create a data feed in JSON format with the structure that best suits the content for the voting boxes.
 - [x] The user can select either thumb up or thumb down button (when the button is selected, a white border is displayed as featured in the comp)
 - [x] Once the user clicks on the "Vote now” button, a message is displayed saying “Thank you for voting!” as well as a vote again button to vote again.
 - [x] There is no limit in the amount of votes
