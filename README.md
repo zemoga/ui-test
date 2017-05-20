@@ -1,4 +1,4 @@
-# UI candidates test
+# UI candidates test v2.0
 
 This exercise will be made outside Zemoga and delivered between the next 3 days that follows this test.
 
