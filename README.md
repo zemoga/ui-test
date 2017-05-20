@@ -44,7 +44,9 @@ Requirements:
 - [x] If the user is already logged in, this link should be switched to a logout link.
 - [x] The login box presents a basic user/pwd form and a button to switch to a signup (registration form with user, pwd, age and marriage status).
 - [x] Persist the user data in the server side.
+- [x] Only logged in users can vote. (maximum 3 votes x box x user), and votes are persisted per user.
 - [x] Create the authentication system and an API with CRUD operations that allows to modify the user information.
+- [x] Create an API endpoint that shows votes x user.
 - [x] For this part you don't need to apply fancy styles. Just raw boxes and forms.
 
 
