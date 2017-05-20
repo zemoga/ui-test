@@ -29,7 +29,7 @@ Requirements:
 - [x] Once the user clicks on the "Vote now” button, a message is displayed saying “Thank you for voting!” as well as a vote again button to vote again.
 - [x] There is no limit in the amount of votes
 - [x] Percentage bars change depending on the up/or downs votes.
-- [x] Think on a way to persist the current votes so if I refresh the page the data is not lost. (could be local in the browser or server side if you have those skills)
+- [x] Think on a way to persist the current votes so if the page is refreshed the data is not lost. (could be local in the browser or server side if you have those skills)
 - [x] We want to see your vanilla/DOM JS skills so please do not use jQuery.
 - [x] You can solve this part with either full Vanilla JS and some patterns, OR any sort of framework such as Angular, React, Vuejs, Ember, etc. Use the one you feel more confortable with.
 - [ ] Bonus points: Some sort of Test (E2E, BDD, etc)
