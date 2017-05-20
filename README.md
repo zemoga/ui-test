@@ -21,7 +21,7 @@ Requirements:
 
 ## Interaction - JS
 
-Just add interaction for the middle voting boxes: Kanye West, Mark Zuckerberg, Cristina Fernández de Kirchner and Malala Yousafzai.
+Just add interaction in the middle voting boxes: Kanye West, Mark Zuckerberg, Cristina Fernández de Kirchner and Malala Yousafzai.
 
 Requirements:
 - [x] Create a data feed in JSON format with the structure that best suits the data for the voting boxes.
