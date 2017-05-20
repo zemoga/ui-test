@@ -56,5 +56,5 @@ Requirements:
 
 Show us a glimpse of what you love to do (and know the best of). :facepunch::facepunch::facepunch:
 
-Send a link pointing to your repository (Github, Bitbucket) including 2 branches. One with the layout part and another one with the interactive (and NodeJS part if applies) part.
+Send a link pointing to your repository (Github, Bitbucket) including 2 branches. One with the layout part and another one with the interactive (and NodeJS if applies) part.
 The master branch should contain the entire exercise.
