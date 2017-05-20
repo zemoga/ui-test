@@ -12,8 +12,7 @@ This exercise will be made outside Zemoga and delivered between the next 3 days 
 
 ## Layout HTML-CSS
 
-- Rely on HTML5 semantics
-- Rely on CSS3 features as possible
+- Rely on HTML5 semantics and CSS3 features as possible. Assume cool browsers such as Chrome, Firefox Safari and Edge, latest versions.
 
 Requirements:
 - [x] Use media queries to adapt the layout in small screens. (comp not provided, so use your creativity).
