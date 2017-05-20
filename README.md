@@ -1,8 +1,8 @@
 # UI candidates test
 
 
-PDF Comp:
-- http://files.zemoga.com/ui/candidates-test/test-ui-v2.pdf
+PNG Comp:
+- http://files.zemoga.com/ui/candidates-test/test-ui-v2.png
 
 PSD Comp:
 - http://files.zemoga.com/ui/candidates-test/test-ui-v2.psd.zip
