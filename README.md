@@ -15,7 +15,7 @@ PSD Comp:
 Requirements:
 - [x] Use media queries to adapt the layout in small screens. (comp not provided, so use your creativity).
 - [x] Non safe web font used: Lato (Available on Google fonts)
-- [x] You can make use of preprocessors / transpilers to help you develop this test if you want (not mandatory)
+- [x] You can make use of preprocessors / transpilers to help you develop this test if you prefer them.
 - [x] Clicking on one of the links of the main menu redirects the user to the other pages (we only provide a comp for the main page so just use white pages with the title section on them).
 
 
