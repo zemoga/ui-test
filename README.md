@@ -2,9 +2,10 @@
 
 
 PDF Comp:
-http://files.zemoga.com/ui/candidates-test/test-ui-v2.pdf
+- http://files.zemoga.com/ui/candidates-test/test-ui-v2.pdf
+
 PSD Comp:
-http://files.zemoga.com/ui/candidates-test/test-ui-v2.psd.zip
+- http://files.zemoga.com/ui/candidates-test/test-ui-v2.psd.zip
 
 This exercise will be made outside Zemoga and delivered between the next 3 days that follows this test.
 
