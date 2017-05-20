@@ -25,7 +25,7 @@ Just add interaction in the middle voting boxes: Kanye West, Mark Zuckerberg, Cr
 
 Requirements:
 - [x] Create a data feed in JSON format with the structure that best suits the content for the voting boxes and populate the initial content from it.
-- [x] The user can select either thumb up or thumb down button (when the button is selected, a white border is displayed as featured in the comp)
+- [x] The user can select either thumb up or thumb down button on each of the boxes (when the button is selected, a white border is displayed as featured in the comp)
 - [x] Once the user clicks on the "Vote now” button, a message is displayed saying “Thank you for voting!” as well as a vote again button to vote again.
 - [x] There is no limit in the amount of votes
 - [x] Percentage bars change depending on the up/or downs votes.
