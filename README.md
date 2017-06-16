@@ -3,10 +3,10 @@
 This exercise will be made outside Zemoga and delivered between the next 3 days that follows this test.
 
 PNG Comp:
-- http://files.zemoga.com/ui/candidates-test/test-ui-v2.png
+- https://s3-us-west-2.amazonaws.com/zemoga-files/ui/candidates-test/test-ui-v2.png
 
 PSD Comp:
-- http://files.zemoga.com/ui/candidates-test/test-ui-v2.psd.zip
+- https://s3-us-west-2.amazonaws.com/zemoga-files/ui/candidates-test/test-ui-v2.psd.zip
 
 ## Layout HTML-CSS
 
