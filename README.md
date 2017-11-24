@@ -56,5 +56,7 @@ Requirements:
 
 Show us a glimpse of what you love to do (and know the best of). :facepunch::facepunch::facepunch:
 
+Rely on the readme.md file to reference key point you want to mention about whay you applied in the excercise and/or any other relevant information about the steps to get the project up and running.
+
 Send a link to estefania.rodriguez@zemoga.com pointing to your repository (Github, Bitbucket) including 2 branches. One with the layout part and another one with the interactive (and NodeJS if applies) part.
 The master branch should contain the entire exercise.
