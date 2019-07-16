@@ -1,5 +1,8 @@
 # UI candidates test v2.0
 
+Note: If time is a constraint, try to resolve what you consider is the most valuable of the excercise. It is better to focus efforts and show your work quality in a portion of the excercise that solving everything with poor quality. In such case, please describe how you would handle the parts of the excercise that you cannot deliver by relying on a Readme.md file.
+
+
 This exercise will be made outside Zemoga and delivered between the next 3 days that follows this test.
 
 PNG Comp:
@@ -57,8 +60,6 @@ Requirements:
 Show us a glimpse of what you love to do (and know the best of). :facepunch::facepunch::facepunch:
 
 Rely on a readme.md file to reference any key aspect you want to mention about what you applied in the excercise and/or any other relevant information about the steps to get the project up and running.
-
-Tip: If time is a constraint, try to resolve what you consider is the most valuable of the excercise. It is better to focus efforts and show your work quality in a portion of the excercise that solving everything with poor quality. In such case, please describe how you would handle the parts of the excercise that you cannot deliver by relying on a Readme.md file.
 
 Send a link to maria.oliveros@zemoga.com pointing to your repository (Github, Bitbucket) including 2 branches. One with the layout part and another one with the interactive (and NodeJS if applies) part.
 The master branch should contain the entire exercise.
