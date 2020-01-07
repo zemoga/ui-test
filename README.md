@@ -61,5 +61,5 @@ Show us a glimpse of what you love to do (and know the best of). :facepunch::fac
 
 Rely on a readme.md file to reference any key aspect you want to mention about what you applied in the excercise and/or any other relevant information about the steps to get the project up and running.
 
-Send a link to german.perez@zemoga.com pointing to your repository (Github, Bitbucket) including 2 branches. One with the layout part and another one with the interactive (and NodeJS if applies) part.
+Send a link to your recruiter pointing to your repository (Github, Bitbucket) including 2 branches. One with the layout part and another one with the interactive (and NodeJS if applies) part.
 The master branch should contain the entire exercise.
