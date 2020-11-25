@@ -1,0 +1,47 @@
+.header {
+  width: 100%;
+
+  &__wrapper {
+    background: linear-gradient(
+      to bottom,
+      #0000008a, 
+      transparent
+    );
+    flex-direction: row;
+    grid-column: 1/-1;
+    grid-template-rows: 30px [logo] auto 40px [nav] auto 40px;
+    left: 50%;
+    margin: 0 auto;
+    position: absolute;
+    transform: translateX(-50%);
+    width: 100%;
+    z-index: 1;
+  }
+
+  &__logo {
+    @include font-type($font-family-base, 32px, $base-font-size-xl);
+    grid-column: 1/-1;
+    grid-row: logo;
+		align-items: center;
+		color: $white;
+		cursor: pointer;
+    display: flex;
+    justify-content: center;
+		letter-spacing: 0.5px;
+		position: relative;
+		text-decoration: none;
+		text-transform: capitalize;
+
+  }
+
+	@include large() {
+    &__wrapper {
+      grid-template-rows: 30px [logo] auto 40px;
+    }
+
+    &__logo {
+      grid-column: 2/5;
+      justify-content: left;
+    }
+  }
+}

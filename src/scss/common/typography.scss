@@ -1,0 +1,55 @@
+@font-face {
+  font-display: swap;
+  font-family: 'Lato';
+  src: 
+    local('Lato'),
+    url('./assets/fonts/Lato-Regular.ttf');
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Lato-light';
+  src: 
+    local('Lato-light'),
+    url('./assets/fonts/Lato-Light.ttf');
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Lato-bold';
+  src: 
+    local('Lato-bold'),
+    url('./assets/fonts/Lato-Bold.ttf');
+  font-style: normal;
+  font-weight: 300;
+}
+
+  
+// Font families
+$font-family-base: 'Lato', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+$font-family-light: 'Lato-light', 'Helvetica Neue', 'HelveticaNeue-Light', 'Helvetica Neue Light', Helvetica, Arial, 'Lucida Grande', sans-serif;
+$font-family-bold: 'Lato-bold', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+
+
+// Font sizes
+$base-font-size: 12px;
+$base-font-size-medium: 14px;
+$base-font-size-large: 16px;
+$base-font-size-xl: 18px;
+$base-font-size-huge: 24px;
+
+// Font weights
+$thin-font-weight: 200;
+$light-font-weight: 300;
+$regular-font-weight: 400;
+$medium-font-weight: 500;
+$bold-font-weight: 600;
+
+// Line height
+$base-line-height-small: 24px;
+$base-line-height-medium: 32px;
+$base-line-height-large: 50px;

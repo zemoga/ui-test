@@ -1,0 +1,32 @@
+.card-list {
+  margin-bottom: 40px;
+
+  &__title {
+    @include font-type($font-family-light, 40px, 42px);
+    color: $greydark;
+    font-weight: 300;
+    grid-column: 1/-1;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  &__container {
+    grid-column: 1/-1;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  @include large() {
+    &__title {
+      grid-column: 2/12;
+      text-align: left;
+    }
+
+    &__container {
+      grid-column: 2/12;
+    }
+  }
+}

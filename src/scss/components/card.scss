@@ -1,0 +1,253 @@
+.card {
+  background-color: $black;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 40px;
+  width: 100%;
+
+  &:after {
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      #0000008a
+    );
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &__container {
+    grid-template-rows: 
+      [zero] 320px
+      [masthead] auto
+      [form] auto
+      [votes] auto
+      [end];
+    grid-column: 1/-1;
+  }
+
+  &__cover-box {
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__masthead {
+    grid-column: 2/4;
+    grid-row: masthead;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__title {
+    @include font-type($font-family-base, 45px, 48px);
+    color: $white;
+  }
+
+  &__body {
+    @include font-type($font-family-light, 16px, 20px);
+    color: $white;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+
+  &__time {
+    @include font-type($font-family-base, 12px, 16px);
+    color: $white;
+    font-weight: $bold-font-weight;
+    margin-bottom: 15px;
+  }
+
+  &__vote-form {
+    align-items: center;
+    display: flex;
+    grid-column: 1/-1;
+    grid-row: form;
+    justify-self: center;
+    margin: 20px 0;
+    z-index: 1;
+  }
+  
+  &__vote-box {
+    margin-right: 10px;
+    position: relative;
+    height: 30px;
+    width: 30px;
+
+    &:after {
+      position: absolute;
+      content: '';
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    &--up {
+      &:after {
+        background-color: $sky;
+      }
+    }
+
+    &--down {
+      &:after {
+        background-color: $orange;
+      }
+
+      img {
+        transform: rotate(180deg);
+      }
+    }
+
+    img {
+      box-sizing: border-box;
+      height: 30px;
+      padding: 5px;
+      position: relative;
+      width: 30px;
+      z-index: 1;
+    }
+  }
+
+  &__vote-info {
+    @include font-type($font-family-base, 30px, 32px);
+    align-self: end;
+    color: $white;
+    display: flex;
+    grid-column: 1/-1;
+    grid-row: votes/end;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+
+    & > li {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 10px;
+      width: 100%;
+
+      &:nth-child(even) {
+        background-color: $orange;
+        justify-content: flex-end;
+        width: 50%;
+
+        img {
+          transform: rotate(180deg);
+        }
+      }
+    
+      &:nth-child(odd) {
+        background-color: $sky;
+        justify-content: left;
+        width: 50%;
+      }
+
+      img {
+        width: 40px;
+        margin: 0 5px;
+      }
+    }
+  }
+
+  &__vote-input {
+    background-color: $sky;
+    border: 2px solid $white;
+    color: $white;
+    cursor: pointer;
+    height: 25px;
+    padding: 10px 15px;
+    width: 25px;
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    z-index: 2;
+
+    &:checked + img {
+      border: 2px solid $white;
+    }
+  }
+
+  &__flag {
+    background-color: $sky;
+    grid-row: masthead;
+    height: 25px;
+    margin: 5px 0;
+    padding: 5px;
+    position: relative;
+    width: 25px;
+    z-index: 1;
+
+    img {
+      width: 25px;
+    }
+  }
+
+  &__percent {
+    @include font-type($font-family-light, 30px, 32px);
+    font-weight: 300;
+  }
+
+  @include large() {
+    width: calc(50% - 20px);
+
+    &:last-child {
+      margin-bottom: auto;
+    }
+
+    &__container {
+      grid-template-rows: 
+        [zero] 320px
+        [masthead] auto
+        [form] auto
+        [votes] auto
+        [end] 35px;
+      grid-column: 1/-1;
+    }
+  
+    &:nth-child(odd) {
+      grid-column: 1/7;
+      justify-self: left;
+    }
+  
+    &:nth-child(even) {
+      grid-column: 7/-1;
+      justify-self: right;
+    }
+
+    &__masthead {
+      grid-column: 2/12;
+    }
+
+    &__vote-form {
+      grid-column: 2/12;
+      justify-self: left;
+      margin: 0 0 20px;
+    }
+
+    &__vote-again {
+      grid-column: 2/12;
+      grid-row: form;
+      justify-self: left;
+      margin: 0 0 20px;
+      position: relative;
+      z-index: 1;
+    }
+  }
+}

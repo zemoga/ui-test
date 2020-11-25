@@ -1,0 +1,8 @@
+.DS_Store
+.idea
+.sass-cache
+.tmp
+.vscode
+dist/
+node_modules/
+**/.depcache.json

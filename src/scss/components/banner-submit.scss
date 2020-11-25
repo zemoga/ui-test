@@ -1,0 +1,67 @@
+.banner-submit {
+  margin-bottom: 50px;
+  position: relative;
+
+  &__wrapper {
+    align-items: center;
+    background-color: $ashes;
+    box-sizing: border-box;
+    grid-column: 1/-1;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 30px;
+    position: relative;
+    text-align: center;
+    width: calc(100% - 120px);
+  }
+
+  &__title {
+    @include font-type($font-family-light, 30px, 32px);
+    font-weight: 300;
+    grid-column: 2/12;
+    color: $black;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+  }
+
+
+  &__cta {
+    &.cta-1 {
+      background-color: transparent;
+      border: 2px solid $black;
+      color: $black;
+      font-size: 18px;
+      position: relative;
+      z-index: 1;
+
+      &:hover {
+        @include background-opacity($black, .2);
+      }
+    }
+  }
+
+  &__img {
+    left: 0;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    z-index: 0;
+  }
+
+
+  @include large() {
+    &__title {
+      margin: 0;
+    }
+
+    &__wrapper {
+      display: flex;
+      grid-column: 2/12;
+      justify-content: space-between;
+      justify-items: space-between;
+      text-align: left;
+      width: 100%;
+    }
+  }
+}

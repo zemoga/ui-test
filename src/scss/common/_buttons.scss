@@ -1,0 +1,19 @@
+.cta-1 {
+  @include font-type($font-family-base, 14px, 16px);
+  @include background-opacity($black, .2);
+  color: $white;
+  cursor: pointer;
+  padding: 12px 20px;
+  border: 2px solid $white;
+
+  &:hover {
+    background-color: transparent;
+  }
+  
+  &:disabled {
+    border: 2px solid $ashes;
+    background-color: $carbon;
+    color: $ashes;
+    cursor: initial;
+  }
+}

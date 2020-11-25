@@ -1,0 +1,35 @@
+body {
+  padding: 0;
+}
+
+.disabled {
+  display: none;
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.social-network {
+  &__icon {
+    color: $greydark;
+    fill: $greydark;
+    height: 32px;
+    margin: 0 10px;
+    width: 32px;
+  }
+}
+
+.dummy-title {
+  display: flex;
+  font-size: 200px;
+  height: 500px;
+}
