@@ -1,65 +1,75 @@
-# UI candidates test v2.0
+Zemoga Front End Development - Candidate Test v2.1
+==================================================
 
-Note: If time is a constraint, try to resolve what you consider is the most valuable part of the excercise. It is better to focus efforts and show your work quality in a portion of the excercise that solving everything with poor quality. In such case, please describe how you would handle the parts of the excercise that you cannot deliver by relying on a Readme.md file.
+👋 Welcome! Are you ready to become a Zemogian FED?
+--------------------------------------------------
 
+### Overview
 
-This exercise will be made outside Zemoga and delivered between the next 3 days that follows this test.
+Our client's app Rule of Thumb™️ tracks the sentiment of their users on trending and controversial people from different fields, including politics, business, media and entertainment, etc. The website has the following requirement: they need to present their users with an easy way to share their opinion on each presented celebrity, using votes (thumbs up and down), and display the results to the user while the poll is open. This method should be available to all users, regardless of where they're accessing the website, whether it's a smartphone, a tablet or a desktop computer.
 
-PNG Comp:
-- https://s3-us-west-2.amazonaws.com/zemoga-files/ui/candidates-test/test-ui-v2.png
+> 👉  **The challenge**: Build a responsive display component for the data provided, and add it to the Rule of Thumb™️ website, complying with the design specifications.
 
-PSD Comp:
-- https://s3-us-west-2.amazonaws.com/zemoga-files/ui/candidates-test/test-ui-v2.psd.zip
+### Acceptance Criteria
 
-## Layout HTML-CSS
+Below you will find the minimum requirements we need to consider this challenge as completed 🎉
 
-- Rely on HTML5 semantics and CSS3 features as possible. Assume cool browsers such as Chrome, Firefox Safari and Edge, latest versions.
+1. [ ] The interactive component should meet the design criteria, which you can find below in the different required resolutions:
+   - [Mobile Prototype](https://www.figma.com/proto/NlQ6PjfanVO2YyuDUaohjx/Rule-of-Thumb---FED-Challenge?node-id=6%3A43&scaling=min-zoom)
+   - [Tablet Prototype](https://www.figma.com/proto/NlQ6PjfanVO2YyuDUaohjx/Rule-of-Thumb---FED-Challenge?node-id=84%3A1033&scaling=min-zoom)
+   - [Desktop Prototype](https://www.figma.com/proto/NlQ6PjfanVO2YyuDUaohjx/Rule-of-Thumb---FED-Challenge?node-id=84%3A2401&scaling=min-zoom)
+   - [Design Handoff (Figma)](https://www.figma.com/file/NlQ6PjfanVO2YyuDUaohjx/Rule-of-Thumb---FED-Challenge)
+2. [ ] In mobile version, cards **should only** be displayed as a list of cards, with horizontal scrolling and overflow.
+3. [ ] In tablet and desktop versions, user **should be able to switch views** between _list view_ and _grid view_, using the dropdown menu, which should be located at the top right section of the component.
+   1. If the _list view_ is selected, all cards should be stacked vertically, according to the design specs.
+   2. If the _grid view_ is selected, all cards should be positioned as a grid of elements, according to the design specs.
+4. [ ] Each item should contain a **gauge bar** at the bottom, which will hold the amount of positive and negative votes of that item, **displayed as a percentage**. (See `assets/data.json` for reference).
+5. [ ] Each item should contain three buttons: a **"thumbs down" (yellow)**, a **"thumbs up" (teal)** and a "Vote now" button **which should be disabled** by default.
+   1. If either "thumbs up" or "thumbs down" button is pressed, it should **toggle the selected state of that button** (denoted as a white border, see design specs for reference), and enable the "Vote Now" button.
+   2. If "Vote Now" button is pressed, **that vote should be posted**, and three other things should happen:
+      1. Eyebrow text should change to the copy "Thank you for your vote!"
+      2. "Vote now" text should change to the copy "Vote Again"
+      3. The **gauge bar** below should reflect the changes in the registered data and **percentage should be updated**.
+   3. If "Vote Again" button is pressed, all buttons should return to the initial state, and all modified copy texts should be reverted to their original state. The gauge bar, however, should persist the votes already posted.
+6. [ ] **All posted votes should be persisted** by any means, and should be exactly the same count, even if the page is refreshed. Use any persisting mechanisms you prefer: LocalStorage, Cookies, IndexedDB, URL params, a Back End service (Firebase, DynamoDB, Redis, etc).
 
-Requirements:
-- [x] Use media queries to adapt the layout in small screens. (comp not provided, so use your creativity).
-- [x] Non safe web font used: Lato
-- [x] You can rely on preprocessors / transpilers such as LESS/SASS or any sort of CSS framework if you want. (Pure CSS is also an option but you must argue the benefits)
-- [x] Clicking on one of the links of the main menu redirects the user to the other pages (we only provide a comp for the main page so just use white pages with the title section on them).
+> ✅ You won't start from scratch! In this repository you can find the file `index.html` which contains the source code of the website, and the section in which you should include the interactive component. Feel free to use, reuse, refactor and/or vandalize any CSS variables, class names and markup as a starting point.
 
+Tips on Delivery
+----------------
 
-## Interaction - JS
+Whew! that was a lot of ACs, wasn't it? 😬
 
-Just add interaction in the middle voting boxes: Kanye West, Mark Zuckerberg, Cristina Fernández de Kirchner and Malala Yousafzai.
+Here are some tips to make this challenge truly enjoyable:
 
-Requirements:
-- [x] Create a data feed in JSON format with the structure that best suits the content for the voting boxes and populate the initial content from it.
-- [x] The user can select either thumb up or thumb down button on each of the boxes (when the button is selected, a white border is displayed as featured in the comp)
-- [x] Once the user clicks on the "Vote now” button, a message is displayed saying “Thank you for voting!” as well as a vote again button to vote again.
-- [x] There is no limit in the amount of votes
-- [x] Percentage bars change depending on the up/or downs votes.
-- [x] Think on a way to persist the current votes so if the page is refreshed the data is not lost. (could be local in the browser or server side if you have those skills)
-- [x] We want to see your vanilla/DOM JS skills so please do not use jQuery.
-- [x] You can solve this part with either full Vanilla JS and some patterns, OR any sort of framework such as Angular, React, Vuejs, Ember, etc. Use the one you feel more confortable with.
-- [ ] Bonus points: Some sort of Test (E2E, BDD, etc)
-
-
-## NodeJS
-
-**Only** if you are also applying for NodeJS or any other server side technology, or if you want to also show skills in this part:
-
-Requirements:
-- [x] Activate the Login/Signup link in the main menu by showing a basic login dialog.
-- [x] If the user is already logged in, this link should be switched to a logout link.
-- [x] The login box presents a basic user/pwd form and a button to switch to a signup (registration form with user, pwd, age and marriage status).
-- [x] Persist the user data in the server side.
-- [x] Only logged in users can vote. (maximum 3 votes x box x user), and votes are persisted per user.
-- [x] Create the authentication system and an API with CRUD operations that allows to modify the user information.
-- [x] Create an API endpoint that shows votes x user.
-- [x] For this part you don't need to apply fancy styles. Just raw boxes and forms.
+- **Use any framework/library/tool you like.** Anything goes! React freak? Angular nerd? Vue believer? Svelte/Ember/Mithril/_younameit_ hipster? _jQuery ninja_? (Still relevant this days, go figure 😅). Even if you are a purist Vanilla HTML/CSS/ECMAScript user, please use whichever tool you need to showcase the best of your work.
+- **We don't care about IE** and neither should you. We'll test in Chromium, like all cool people do.
+- **Please send us the manual** or at least instructions in a README.md file on how to run your code, if we need to compile/transpile/serve the code you send us. We'll try our best to figure out issues if any problem arises, but a good developer should always ensure that it works in places other that their own machine.
+- **Cleanup your boilerplate**. Useless files, empty tests, commented out code and everything alike hinders our ability to see your real code. So, if you're using CLIs, generators or code boilerplate of any sort, please be kind and cleanup anything that's not adding value to the result.
+- **We value your time.** There's no time limit on this challenge (well, reasonably speaking, we don't expect you to take more than a few days on it), and as long as you send us a working code that meets the criteria described above, we're happy. Don't overthink it though, find an easy way to achieve a good result and stick to it.
+- **No copypasta, please.** You can find anything on GitHub and StackOverflow these days, can't you? Well, _so do we_. We won't blame you if you forgot how to use the LocalStorage API. Just don't copypaste big chunks of code.
 
 
+### Going above and beyond 🚀
 
+We're pleased to have the best talent in the business. We _know_ we have it, because each and every one of us always go further. Are you like us? Here are some ideas that, even **they're entirely optional**, you can go for any of them to show us what you're made of 💪
 
-## Delivery
+- Implement any sort of _state management solution_, that deals with data updates in a coherent manner.
+- Write some tests. Unit, Integration, E2E, anything that ensures that your code is unbreakable.
+- Do you know some _Node.js_? Build a REST or GraphQL API that persist the votes data, and hook it to your interactive component.
+- Implement some level of accessibility for impaired people reviewing your code.
+- _Dockerize_ the entire website and make it run flawlessly in any machine.
+- Document your code. Use any format like JSDoc to generate documentation that allow us to peek under the hood.
+- Cleanup your commit history and show us your thought process with atomic commits.
+- Include any SEO strategy. Microformats, OG Tags, JSON-LD.
+- Create configuration for different environments, and optimize your code for production usage. Lighthouse benchmarks? _Of course!_
+- Does _Serverless_ ring a bell? Create functions to persist votes data, which we can invoke locally, with serverless-offline, Terraform or Amazon SAM (to name a few).
 
-Show us a glimpse of what you love to do (and know the best of). :facepunch::facepunch::facepunch:
+> ⚠️ The sky is the limit, but so is your time. Remember that any of these is **entirely optional**. We want our heads blown by your code, but we won't wait three months for your masterpiece. Be reasonable and stick to what you can achieve in a few days.
 
-Rely on a readme.md file to reference any key aspect you want to mention about what you applied in the excercise and/or any other relevant information about the steps to get the project up and running.
+Challenge complete?
+-------------------
 
-Send a link to your recruiter pointing to your repository (Github, Bitbucket) including 2 branches. One with the layout part and another one with the interactive (and NodeJS if applies) part.
-The master branch should contain the entire exercise.
+Send a link to your recruiter pointing to your repository (Github or Bitbucket). The **master** branch should contain the entire result, along with the instructions to run your code on the README.md file (if apples).
+
+Happy coding! 🙌
