@@ -31,41 +31,40 @@ Below you will find the minimum requirements we need to consider this challenge 
       2. "Vote now" text should change to the copy "Vote Again"
       3. The **gauge bar** below should reflect the changes in the registered data and **percentage should be updated**.
    3. If "Vote Again" button is pressed, all buttons should return to the initial state, and all modified copy texts should be reverted to their original state. The gauge bar, however, should persist the votes already posted.
-6. [ ] **All posted votes should be persisted** by any means, and should be exactly the same count, even if the page is refreshed. Use any persistance mechanisms you prefer: LocalStorage, Cookies, IndexedDB, URL params, a Back End service (Firebase, DynamoDB, Redis, etc).
+6. [ ] **All posted votes should be persisted** by any means, and should be exactly the same count, even if the page is refreshed. Use _any_ persistance mechanisms you prefer: LocalStorage, Cookies, IndexedDB, URL params, a Back End service (Firebase, DynamoDB, Redis, etc).
 
 > ✅ You won't start from scratch! In this repository you can find the file `index.html` which contains the source code of the website, and the section in which you should include the interactive component. Feel free to use, reuse, refactor and/or vandalize any CSS variables, class names and markup as a starting point.
 
 Tips on Delivery
 ----------------
 
-Whew! that was a lot of ACs, wasn't it? 😬
+Whew! that was a lot of requirements, wasn't it? 😬
 
 Here are some tips to make this challenge truly enjoyable:
 
 - **Use any framework/library/tool you like.** Anything goes! React freak? Angular nerd? Vue believer? Svelte/Ember/Mithril/_younameit_ hipster? _jQuery ninja_? (Still relevant this days, go figure 😅). Even if you are a purist Vanilla HTML/CSS/ECMAScript user, please use whichever tool you need to showcase the best of your work.
 - **We don't care about IE** and neither should you. We'll test in Chromium, like all cool people do.
-- **Please send us the manual** or at least instructions in a README.md file on how to run your code, if we need to compile/transpile/serve the code you send us. We'll try our best to figure out issues if any problem arises, but a good developer should always ensure that it works in places other that their own machine.
+- **Please send us the manual** or at least instructions in a README.md file on how to run your code, if we need to compile/transpile/serve the code you send us. We'll try our best to figure out issues if any problem arises, but a good developer should always ensure that their code works in places other that their own machine. We suggest using the [_engines_ property](https://medium.com/@faith__ngetich/locking-down-a-project-to-a-specific-node-version-using-nvmrc-and-or-engines-e5fd19144245) in a `package.json`, an `.nvmrc` file or [Volta](https://docs.volta.sh/guide/), if you need to lockdown specific tool versions (such as Node.js, yarn, etc).
 - **Cleanup your boilerplate**. Useless files, empty tests, commented out code and everything alike hinders our ability to see your real code. So, if you're using CLIs, generators or code boilerplate of any sort, please be kind and cleanup anything that's not adding value to the result.
-- **We value your time.** There's no time limit on this challenge (well, reasonably speaking, we don't expect you to take more than a few days on it), and as long as you send us a working code that meets the criteria described above, we're happy. Don't overthink it though, find an easy way to achieve a good result and stick to it.
+- **We value your time.** There's no time limit on this challenge (well, reasonably speaking, we don't expect you to take more than **three days** on it), and as long as you send us working code that meets the criteria described above, we're happy. Don't overthink it though, find an easy way to achieve a good result and stick to it.
 - **No copypasta, please.** You can find anything on GitHub and StackOverflow these days, can't you? Well, _so can we_. We won't blame you if you forgot how to use the LocalStorage API. Just don't copypaste big chunks of code.
 
 
 ### Going above and beyond 🚀
 
-If you feel that covering the basic acceptance criteria isn't enough to showcase the best of your abilities feel free to add a little extra, this is by no means mandatory but if there are any valuable additional skills you'd like to show off go right ahead. These are just a few examples of things you could add
+If you feel that covering the basic acceptance criteria isn't enough to showcase the best of your abilities feel free to add a little extra. **This is by no means mandatory** but if there are any valuable additional skills you'd like to show off go right ahead. These are just a few ideas of things you could add:
 
 - Implement any sort of _state management solution_, that deals with data updates in a coherent manner.
 - Write some tests. Unit, Integration, E2E, anything that ensures that your code is unbreakable.
-- Do you know some _Node.js_? Build a REST or GraphQL API that persist the votes data, and hook it to your interactive component.
+- Do you know any back end language? Does _serverless_ ring a bell? Build some basic back end that deals with persistance.
 - Implement some level of accessibility for impaired people reviewing your code.
-- _Dockerize_ the entire website and make it run flawlessly in any machine.
-- Document your code. Use any format like JSDoc to generate documentation that allow us to peek under the hood.
+- _Containerize_ the entire website and make it run flawlessly on any machine.
 - Cleanup your commit history and show us your thought process with atomic commits.
-- Include any SEO strategy. Microformats, OG Tags, JSON-LD.
-- Create configuration for different environments, and optimize your code for production usage. Lighthouse benchmarks? _Of course!_
-- Does _Serverless_ ring a bell? Create functions to persist votes data, which we can invoke locally, with serverless-offline, Terraform or Amazon SAM (to name a few).
+- Document your code. Use any format you know of to generate documentation that allow us to peek under the hood.
+- Include any SEO strategy, and show off your score in any popular tool.
+- Create configuration for different environments, and optimize your code for production usage.
 
-> ⚠️ The sky is the limit, but so is your time. Remember that any of these is **entirely optional**. We want our heads blown by your code, but we won't wait three months for your masterpiece. Be reasonable and stick to what you can achieve in a few days.
+> ⚠️ The sky is the limit, but so is your time. Remember that any of these is **entirely optional**. We want our heads blown by your code, but we won't wait three months for your masterpiece. Be reasonable and stick to what you can achieve in **three days tops**.
 
 Challenge complete?
 -------------------
