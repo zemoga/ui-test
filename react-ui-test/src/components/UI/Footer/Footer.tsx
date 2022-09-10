@@ -1,10 +1,13 @@
 import { FooterWrapper } from './Footer.styles';
+import Container from '../../Layout/Container/Container';
 
 
 const Footer = () => {
     return (
         <FooterWrapper>
-            <h1>Hi Footer Test</h1>
+            <Container>
+                <h1>Hi Footer Test</h1>
+            </Container>
         </FooterWrapper>
     )
 }

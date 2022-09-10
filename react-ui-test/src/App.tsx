@@ -1,12 +1,7 @@
-import Footer from './components/UI/Footer/Footer';
+import PageLayout from './components/Layout/PageLayout/PageLayout'
 
 function App() {
-  return (
-    <div className="App">
-        <h1>Hola</h1>
-        <Footer/>
-    </div>
-  );
+  return <PageLayout />
 }
 
-export default App;
+export default App
