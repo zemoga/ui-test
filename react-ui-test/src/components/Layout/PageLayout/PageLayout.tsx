@@ -1,11 +1,16 @@
-import Footer from '../../UI/Footer/Footer';
+import Separator from '../../UI/Separator/Separator'
+import Footer from '../../UI/Footer/Footer'
+import Container from '../Container/Container'
 
 const PageLayout = () => {
-    return(
-        <div>
-            <Footer/>
-        </div>
-    )
+  return (
+    <div>
+      <Container>
+        <Separator />
+      </Container>
+      <Footer />
+    </div>
+  )
 }
 
-export default PageLayout;
+export default PageLayout

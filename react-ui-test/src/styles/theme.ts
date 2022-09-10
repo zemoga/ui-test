@@ -13,9 +13,9 @@ const theme = {
     colorBlack: 'rgba(0, 0, 0, 1)',
   },
   device: {
-    small: '375px',
-    tablet: '768px',
-    desktop: '1100px',
+    small: 'min-width: 375px',
+    tablet: 'min-width: 768px',
+    desktop: 'min-width: 1100px',
   },
 }
 
