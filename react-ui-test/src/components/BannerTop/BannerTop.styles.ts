@@ -9,7 +9,7 @@ export const BannerLeft = styled.div`
   padding-right: 1rem;
 
   span:first-of-type {
-    color: var(--color-dark-gray);
+    color: ${({ theme }) => theme.colors.colorDarkGray};
     font-size: 1.25rem;
     font-weight: 300;
     letter-spacing: -0.07rem;
@@ -17,7 +17,7 @@ export const BannerLeft = styled.div`
 
   span:last-of-type {
     display: block;
-    color: var(--color-dark-gray);
+    color: ${({ theme }) => theme.colors.colorDarkGray};
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: -0.05rem;
@@ -28,8 +28,6 @@ export const BannerLeft = styled.div`
   }
 
   @media (${({ theme }) => theme.device.desktop}) {
-    min-height: 700px;
-
     span:first-of-type {
       font-size: 1rem;
     }
@@ -40,7 +38,7 @@ export const BannerLeft = styled.div`
     }
   }
 
-  @media (${({ theme }) => theme.device.custom500}) {
+  @media all and (${({ theme }) => theme.device.custom500}) {
     flex-basis: 30%;
   }
 `
@@ -50,7 +48,7 @@ export const BannerRight = styled.div`
 
   p {
     margin: 0;
-    color: var(--color-dark-gray);
+    color: ${({ theme }) => theme.colors.colorDarkGray};
     font-size: 1.25rem;
     font-weight: 300;
     letter-spacing: -0.05rem;
@@ -61,17 +59,21 @@ export const BannerRight = styled.div`
   }
 
   @media (${({ theme }) => theme.device.desktop}) {
-    min-height: 700px;
-
     p {
       font-size: 1rem;
     }
   }
 
-  @media (${({ theme }) => theme.device.custom500}) {
+  @media all and (${({ theme }) => theme.device.custom500}) {
     flex-basis: 70%;
   }
 `
 export const BannerButton = styled.button`
   ${({ theme }) => theme.mixins.iconButton}
+  display:none;
+
+  @media (${({ theme }) => theme.device.desktop}) {
+    display: block;
+    margin-left: 2rem;
+  }
 `
