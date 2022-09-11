@@ -1,7 +1,7 @@
 const theme = {
   colors: {
-    colorYellowNegative: 'rgb(249, 173, 29)',
-    colorGreenPositive: 'rgb(60, 187, 180)',
+    colorYellowNegative: '249, 173, 29',
+    colorGreenPositive: '60, 187, 180',
     colorDarkBackground: 'rgba(0, 0, 0, .4)',
     colorDarkerBackground: 'rgba(0, 0, 0, .6)',
     colorDarkerGray: 'rgba(51, 51, 51, 1)',
@@ -17,34 +17,41 @@ const theme = {
     tablet: 'min-width: 768px',
     desktop: 'min-width: 1100px',
   },
-  mixins : {
-    iconButton: `
-      padding: 0;
-      border: 0;
-      background-color: transparent;
-  
-      &[aria-label="thumbs up"] {
-        background-color: rgba(var(--color-green-positive), .8);
-      }
-  
-      &[aria-label="thumbs up"]:hover {
-        background-color: rgba(var(--color-green-positive), 1);
-      }
-  
-      &[aria-label="thumbs down"] {
-        background-color: rgba(var(--color-yellow-negative), .8);
-      }
-  
-      &[aria-label="thumbs down"]:hover {
-        background-color: rgba(var(--color-yellow-negative), 1);
-      }
-  
-      > img {
-        width: 100%;
-        height: 100%;
-      }
-    `,
-  }
+  mixins: {},
 }
 
-export default theme;
+const mixins = {
+  iconButton: `
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+
+    &[aria-label="thumbs up"] {
+      background-color: rgba(${theme.colors.colorGreenPositive}, .8);
+    }
+
+    &[aria-label="thumbs up"]:hover {
+      background-color: rgba(${theme.colors.colorGreenPositive}, 1);
+    }
+
+    &[aria-label="thumbs down"] {
+      background-color: rgba(${theme.colors.colorYellowNegative}, .8);
+    }
+
+    &[aria-label="thumbs down"]:hover {
+      background-color: rgba(${theme.colors.colorYellowNegative}, 1);
+    }
+
+    > img {
+      width: 100%;
+      height: 100%;
+    }
+  `,
+}
+
+export default {
+  ...theme,
+  mixins: { ...mixins },
+}
+
+// export default theme;

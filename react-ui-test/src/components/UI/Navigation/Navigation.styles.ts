@@ -33,6 +33,11 @@ export const NavHamburguer = styled.button`
   right: 1rem;
   width: 25px;
   height: 20px;
+
+  &:focus + .nav__links {
+    transform: translateX(0);
+  }
+
   ${({ theme }) => theme.mixins.iconButton}
 
   @media (${({ theme }) => theme.device.desktop}) {
@@ -51,6 +56,10 @@ export const NavLinks = styled.ul`
   padding: 4rem 0 2rem;
   background-color: var(--color-darker-background);
   transform: translateX(100vw);
+
+  &:focus-within {
+    transform: translateX(0);
+  }
 
   li {
     width: 100%;
