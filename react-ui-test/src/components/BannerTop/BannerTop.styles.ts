@@ -23,11 +23,15 @@ export const BannerLeft = styled.div`
     letter-spacing: -0.05rem;
   }
 
-  @media (${({ theme }) => theme.device.tablet}) {
+  @media all and (${({ theme }) => theme.device.custom500}) {
+    flex-basis: 30%;
+  }
+
+  @media all and (${({ theme }) => theme.device.tablet}) {
     flex-basis: 20%;
   }
 
-  @media (${({ theme }) => theme.device.desktop}) {
+  @media all and (${({ theme }) => theme.device.desktop}) {
     span:first-of-type {
       font-size: 1rem;
     }
@@ -36,10 +40,6 @@ export const BannerLeft = styled.div`
       font-size: 1.5rem;
       letter-spacing: 0;
     }
-  }
-
-  @media all and (${({ theme }) => theme.device.custom500}) {
-    flex-basis: 30%;
   }
 `
 
@@ -54,25 +54,25 @@ export const BannerRight = styled.div`
     letter-spacing: -0.05rem;
   }
 
-  @media (${({ theme }) => theme.device.tablet}) {
+  @media all and (${({ theme }) => theme.device.custom500}) {
+    flex-basis: 70%;
+  }
+
+  @media all and (${({ theme }) => theme.device.tablet}) {
     flex-basis: 80%;
   }
 
-  @media (${({ theme }) => theme.device.desktop}) {
+  @media all and (${({ theme }) => theme.device.desktop}) {
     p {
       font-size: 1rem;
     }
-  }
-
-  @media all and (${({ theme }) => theme.device.custom500}) {
-    flex-basis: 70%;
   }
 `
 export const BannerButton = styled.button`
   ${({ theme }) => theme.mixins.iconButton}
   display:none;
 
-  @media (${({ theme }) => theme.device.desktop}) {
+  @media all and (${({ theme }) => theme.device.desktop}) {
     display: block;
     margin-left: 2rem;
   }

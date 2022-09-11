@@ -13,6 +13,11 @@ const PageLayout = () => {
       <Header />
       <Container>
         <BannerTop />
+        <main role="main">
+         
+            👉 Your code goes here 👈
+           
+        </main>
         <BannerBottom />
         <Separator />
       </Container>

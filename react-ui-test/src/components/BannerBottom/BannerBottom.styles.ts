@@ -31,7 +31,7 @@ export const BannerLeft = styled.div`
   h2 {
     position: relative;
     margin: 0 0 1rem;
-    color: ${({theme}) => theme.colors.colorDarkerGray};
+    color: ${({ theme }) => theme.colors.colorDarkerGray};
     font-size: 2rem;
     font-weight: 400;
     text-align: center;
@@ -53,9 +53,9 @@ export const BannerRight = styled.div`
     display: block;
     width: 100%;
     padding: 1rem 0;
-    border: 2px solid ${({theme}) => theme.colors.colorDarkerBackground};
+    border: 2px solid ${({ theme }) => theme.colors.colorDarkerBackground};
     background: transparent;
-    color: ${({theme}) => theme.colors.colorDarkerGray};
+    color: ${({ theme }) => theme.colors.colorDarkerGray};
     font-size: 1.5rem;
   }
 

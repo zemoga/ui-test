@@ -57,6 +57,11 @@ const mixins = {
     padding: 1rem;
     margin: 1rem;
     background-color: ${theme.colors.colorLightGray};
+
+    @media all and (${theme.device.desktop}) {
+      margin-right: 0;
+      margin-left: 0;
+    }
   `,
 }
 

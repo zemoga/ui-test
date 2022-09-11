@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import HeroImage from '../../styles/img/pope-francis.png'
+import HeroImage from '../../styles/img/pope-francis.png' // eslint-disable-line no-use-before-define
 
 export const Hero = styled.header`
   position: relative;
@@ -255,13 +255,13 @@ export const ClosingGaugeRight = styled.div`
   padding: 0 0 0 0.75rem;
 
   span:first-of-type {
-    color: var(--color-dark-gray);
+    color: ${({ theme }) => theme.colors.colorDarkGray};
     font-size: 1.5rem;
     font-weight: 400;
   }
 
   span:last-of-type {
-    color: var(--color-dark-gray);
+    color: ${({ theme }) => theme.colors.colorDarkGray};
     font-size: 1.5rem;
     font-weight: 300;
   }
@@ -269,7 +269,8 @@ export const ClosingGaugeRight = styled.div`
   @media (${({ theme }) => theme.device.desktop}) {
     padding-left: 1rem;
 
-    span {
+    span:first-of-type,
+    span:last-of-type {
       font-size: 2rem;
     }
   }

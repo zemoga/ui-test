@@ -5,7 +5,7 @@ export const Nav = styled.nav`
   z-index: 2;
   top: 0;
   display: flex;
-  width: calc(100vw);
+  width: calc(100vw - 2rem);
   min-height: 10rem;
   justify-content: space-between;
   padding: 0 1rem;
@@ -54,7 +54,7 @@ export const NavLinks = styled.ul`
   height: calc(100vh - 4rem);
   flex-direction: column;
   padding: 4rem 0 2rem;
-  background-color: var(--color-darker-background);
+  background-color: ${({ theme }) => theme.colors.colorDarkerBackground};
   transform: translateX(100vw);
 
   &:focus-within {
@@ -69,7 +69,7 @@ export const NavLinks = styled.ul`
   }
 
   a {
-    color: var(--color-white);
+    color: ${({ theme }) => theme.colors.colorWhite};
     text-decoration: none;
   }
 
@@ -108,7 +108,7 @@ export const NavLinks = styled.ul`
 export const NavSearchInput = styled.input`
   width: 25vw;
   border: 0;
-  border-bottom: 2px solid var(--color-white);
+  border-bottom: 2px solid ${({ theme }) => theme.colors.colorWhite};
   background-color: transparent;
   border-radius: 0;
   color: var(--color-white);

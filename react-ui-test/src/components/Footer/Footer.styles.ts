@@ -12,6 +12,10 @@ export const FooterContainer = styled.div`
   @media (${({ theme }) => theme.device.tablet}) {
     align-items: flex-start;
   }
+  @media (${({ theme }) => theme.device.desktop}) {
+    margin-right: 0;
+    margin-left: 0;
+  }
 `
 
 export const FooterLinks = styled.div`

@@ -18,10 +18,6 @@ export default createGlobalStyle`
         box-sizing: inherit;
     }
 
-    * {
-        box-sizing: border-box;
-    }
-
     body {
         position: relative;
     }
@@ -45,6 +41,23 @@ export default createGlobalStyle`
         border-bottom: 2px dotted ${({ theme }: ThemeTypes) => theme.colors.colorDarkGray};
         margin: 1.5rem 1rem;
     }
+
+    main[role="main"] {
+        padding: 0 1rem;
+        margin-top: 2rem;
+    }
+    
+    main h2,
+    main h3,
+    main h4 {
+        color: var(--color-dark-gray);
+        font-weight: 300;
+    }
+    
+    main h2 {
+        margin: 0 0 2rem;
+        font-size: 2rem;
+    }
     
     @media (${({ theme }: ThemeTypes) => theme.device.tablet}) {
         html, body {
@@ -55,6 +68,10 @@ export default createGlobalStyle`
     @media (${({ theme }: ThemeTypes) => theme.device.desktop}) {
         html, body {
             font-size: 18px;
+        }
+
+        main h2 {
+            font-size: 2.5rem;
         }
     }
 `
