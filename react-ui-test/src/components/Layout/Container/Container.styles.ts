@@ -1,9 +1,24 @@
 import styled from 'styled-components';
 
 export const ContainerWrapper = styled.div`
-    width: 100%;
+    display: contents;
+    
     @media (${({theme})=> theme.device.desktop}){
+        position: relative;
+        display: block;
+        width: 100vw;
         max-width: 1100px;
-        margin: 0 auto;
+        margin-right: auto;
+        margin-left: auto;
+
+        > *,
+        > hr[role="separator"] {
+            margin-right: 0;
+            margin-left: 0;
+        }
+
+        main {
+            padding: 0;
+        }
     }
 `

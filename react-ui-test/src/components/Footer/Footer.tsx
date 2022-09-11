@@ -1,4 +1,4 @@
-import Container from '../../Layout/Container/Container'
+import Container from '../Layout/Container/Container'
 import { FooterWrapper, FooterContainer, FooterLinks, FooterSocial } from './Footer.styles'
 
 const Footer = () => {

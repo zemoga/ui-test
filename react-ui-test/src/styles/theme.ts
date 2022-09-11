@@ -17,8 +17,34 @@ const theme = {
     tablet: 'min-width: 768px',
     desktop: 'min-width: 1100px',
   },
+  mixins : {
+    iconButton: `
+      padding: 0;
+      border: 0;
+      background-color: transparent;
+  
+      &[aria-label="thumbs up"] {
+        background-color: rgba(var(--color-green-positive), .8);
+      }
+  
+      &[aria-label="thumbs up"]:hover {
+        background-color: rgba(var(--color-green-positive), 1);
+      }
+  
+      &[aria-label="thumbs down"] {
+        background-color: rgba(var(--color-yellow-negative), .8);
+      }
+  
+      &[aria-label="thumbs down"]:hover {
+        background-color: rgba(var(--color-yellow-negative), 1);
+      }
+  
+      > img {
+        width: 100%;
+        height: 100%;
+      }
+    `,
+  }
 }
 
-export default {
-  ...theme,
-}
+export default theme;
