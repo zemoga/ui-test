@@ -14,6 +14,7 @@ const theme = {
   },
   device: {
     small: 'min-width: 375px',
+    custom500: 'min-width: 500px',
     tablet: 'min-width: 768px',
     desktop: 'min-width: 1100px',
   },
@@ -46,6 +47,16 @@ const mixins = {
       width: 100%;
       height: 100%;
     }
+  `,
+  banner: `
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    margin: 1rem;
+    background-color: ${theme.colors.colorLightGray};
   `,
 }
 
