@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import { RulingDataTypes } from '../PreviousRulings.types'
-import ThumbsUp from '../../../styles/img/thumbs-up.svg' // eslint-disable-line no-use-before-define
-import ThumbsDown from '../../../styles/img/thumbs-down.svg' // eslint-disable-line no-use-before-define
+
 import {
   Ruling,
   RulingImage,
@@ -50,6 +49,24 @@ const RulingItem = ({ data }: RulingItemDataTypes) => {
     setImageFilePatter()
   }, [])
 
+  useEffect(() => {
+
+    if(window.innerWidth < 768){
+      setIsListMode(false);
+    }
+
+    const windowResize = () => {
+      console.log(window.innerWidth);
+      if(window.innerWidth < 768){
+        setIsListMode(false);
+      }else{
+        setIsListMode(true);
+      }
+    }
+    window.addEventListener('resize', windowResize);
+  })
+
+
   return (
     <Ruling isListMode={isListMode}>
       <RulingImage
@@ -62,9 +79,6 @@ const RulingItem = ({ data }: RulingItemDataTypes) => {
       <RulingWrapper isListMode={isListMode}>
         <RulingWrapperLeft isListMode={isListMode}>
           <RulingName isListMode={isListMode}>
-            <span>
-              <img src={ThumbsUp} alt='thumbs up' />
-            </span>
             <span>{data.name}</span>
           </RulingName>
           <RulingDescription>{data.description}</RulingDescription>
@@ -72,23 +86,17 @@ const RulingItem = ({ data }: RulingItemDataTypes) => {
         <RulingWrapperRight isListMode={isListMode}>
           <RulingTimeStamp>{data.lastUpdated}</RulingTimeStamp>
           <RulingButtons>
-            <RulingButton className='icon-button' aria-label='thumbs up'>
-              <img src={ThumbsUp} alt='thumbs up' />
-            </RulingButton>
-            <RulingButton className='icon-button' aria-label='thumbs down'>
-              <img src={ThumbsDown} alt='thumbs down' />
-            </RulingButton>
+            <RulingButton className='icon-button' aria-label='thumbs up'/>
+            <RulingButton className='icon-button' aria-label='thumbs down'/>
             <RulingVoteButton>Vote Now</RulingVoteButton>
           </RulingButtons>
         </RulingWrapperRight>
         <RulingBottomGauge>
           <RulingUpGauge>
-            <img src={ThumbsUp} alt='thumbs up' />
             <span>{data.votes.positive}%</span>
           </RulingUpGauge>
           <RulingDownGauge>
             <span>{data.votes.negative}%</span>
-            <img src={ThumbsDown} alt='thumbs down' />
           </RulingDownGauge>
         </RulingBottomGauge>
       </RulingWrapper>
