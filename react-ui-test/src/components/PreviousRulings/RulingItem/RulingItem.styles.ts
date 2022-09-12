@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import thumbUp from '../../../styles/img/thumbs-up.svg'
 import thumbDown from '../../../styles/img/thumbs-down.svg'
 
@@ -11,11 +11,23 @@ const thumbInsert = `
   position: absolute;
 `
 
+const showUp = keyframes`
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1
+  }
+`
+
 export const Ruling = styled.div<{ isListMode?: boolean }>`
   position: relative;
   overflow: hidden;
-  max-width: ${(props) => (!props.isListMode ? '300px' : '100%')};
-  margin: 15px 0;
+  max-width: ${(props) => (!props.isListMode ? '96%' : '100%')};
+  margin: ${(props) => (!props.isListMode ? '0 auto 15px' : '0 0 15px')};
+  opacity: 0;
+  animation: ${showUp} 1s linear forwards;
 
   &:before,
   &:after {

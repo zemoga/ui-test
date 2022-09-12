@@ -21,12 +21,12 @@ import {
 
 interface RulingItemDataTypes {
   data: RulingDataTypes
+  isListMode: boolean
 }
 
-const RulingItem = ({ data }: RulingItemDataTypes) => {
+const RulingItem = ({ data, isListMode }: RulingItemDataTypes) => {
   const [imageFileName, setImageFileName] = useState<string>('')
   const [imageFileName2X, setImageFileName2X] = useState<string>('')
-  const [isListMode, setIsListMode] = useState<boolean>(true)
   const [positivePercentaje, setPositivePercentaje] = useState<string>('')
   const [negativePercentaje, setNegativePercentaje] = useState<string>('')
   const [isPositiveRuling, setIsPositiveRuling] = useState<boolean>(true)
@@ -58,27 +58,14 @@ const RulingItem = ({ data }: RulingItemDataTypes) => {
   }
 
   useEffect(() => {
-    setImageFilePatter()
     setPositivePercentaje(getPercentaje(data.votes.positive))
     setNegativePercentaje(getPercentaje(data.votes.negative))
     setIsPositiveRuling(data.votes.positive > data.votes.negative)
   }, [])
 
   useEffect(() => {
-    if (window.innerWidth < 768) {
-      setIsListMode(false)
-    }
-
-    const windowResize = () => {
-      console.log(window.innerWidth)
-      if (window.innerWidth < 768) {
-        setIsListMode(false)
-      } else {
-        setIsListMode(true)
-      }
-    }
-    window.addEventListener('resize', windowResize)
-  })
+    setImageFilePatter()
+  }, [isListMode])
 
   return (
     <Ruling isListMode={isListMode}>
