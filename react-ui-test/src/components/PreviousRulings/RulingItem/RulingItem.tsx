@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { RulingDataTypes } from '../PreviousRulings.types'
+import Moment from 'react-moment'
 
 import {
   Ruling,
@@ -26,6 +27,9 @@ const RulingItem = ({ data }: RulingItemDataTypes) => {
   const [imageFileName, setImageFileName] = useState<string>('')
   const [imageFileName2X, setImageFileName2X] = useState<string>('')
   const [isListMode, setIsListMode] = useState<boolean>(true)
+  const [positivePercentaje, setPositivePercentaje] = useState<string>('')
+  const [negativePercentaje, setNegativePercentaje] = useState<string>('')
+  const [isPositiveRuling, setIsPositiveRuling] = useState<boolean>(true)
 
   const setImageFilePatter: () => void = () => {
     const imageName = data.picture.split('.', 1)[0]
@@ -45,27 +49,36 @@ const RulingItem = ({ data }: RulingItemDataTypes) => {
     setImageFileName2X(fullImageFileName2X)
   }
 
+  const getPercentaje = (votesNumber: number) => {
+    const fullPercentaje = data.votes.positive + data.votes.negative
+
+    const percentaje = (votesNumber * 100) / fullPercentaje
+
+    return percentaje.toFixed(1)
+  }
+
   useEffect(() => {
     setImageFilePatter()
+    setPositivePercentaje(getPercentaje(data.votes.positive))
+    setNegativePercentaje(getPercentaje(data.votes.negative))
+    setIsPositiveRuling(data.votes.positive > data.votes.negative)
   }, [])
 
   useEffect(() => {
-
-    if(window.innerWidth < 768){
-      setIsListMode(false);
+    if (window.innerWidth < 768) {
+      setIsListMode(false)
     }
 
     const windowResize = () => {
-      console.log(window.innerWidth);
-      if(window.innerWidth < 768){
-        setIsListMode(false);
-      }else{
-        setIsListMode(true);
+      console.log(window.innerWidth)
+      if (window.innerWidth < 768) {
+        setIsListMode(false)
+      } else {
+        setIsListMode(true)
       }
     }
-    window.addEventListener('resize', windowResize);
+    window.addEventListener('resize', windowResize)
   })
-
 
   return (
     <Ruling isListMode={isListMode}>
@@ -76,27 +89,31 @@ const RulingItem = ({ data }: RulingItemDataTypes) => {
         alt={data.name}
         isListMode={isListMode}
       />
-      <RulingWrapper isListMode={isListMode}>
+      <RulingWrapper isListMode={isListMode} isPositiveRuling={isPositiveRuling}>
         <RulingWrapperLeft isListMode={isListMode}>
-          <RulingName isListMode={isListMode}>
+          <RulingName isListMode={isListMode} isPositiveRuling={isPositiveRuling}>
             <span>{data.name}</span>
           </RulingName>
           <RulingDescription>{data.description}</RulingDescription>
         </RulingWrapperLeft>
         <RulingWrapperRight isListMode={isListMode}>
-          <RulingTimeStamp>{data.lastUpdated}</RulingTimeStamp>
+          <RulingTimeStamp>
+            <Moment fromNow>{data.lastUpdated}</Moment>
+            <span> in </span>
+            <span>{data.category}</span>
+          </RulingTimeStamp>
           <RulingButtons>
-            <RulingButton className='icon-button' aria-label='thumbs up'/>
-            <RulingButton className='icon-button' aria-label='thumbs down'/>
+            <RulingButton className='icon-button' aria-label='thumbs up' />
+            <RulingButton className='icon-button' aria-label='thumbs down' />
             <RulingVoteButton>Vote Now</RulingVoteButton>
           </RulingButtons>
         </RulingWrapperRight>
         <RulingBottomGauge>
-          <RulingUpGauge>
-            <span>{data.votes.positive}%</span>
+          <RulingUpGauge percentaje={positivePercentaje}>
+            <span>{positivePercentaje}%</span>
           </RulingUpGauge>
-          <RulingDownGauge>
-            <span>{data.votes.negative}%</span>
+          <RulingDownGauge percentaje={negativePercentaje}>
+            <span>{negativePercentaje}%</span>
           </RulingDownGauge>
         </RulingBottomGauge>
       </RulingWrapper>

@@ -57,7 +57,7 @@ export const RulingImage = styled.img<{ isListMode?: boolean }>`
   }
 `
 
-export const RulingWrapper = styled.div<{ isListMode?: boolean }>`
+export const RulingWrapper = styled.div<{ isListMode?: boolean; isPositiveRuling?: boolean }>`
   position: absolute;
   z-index: 1;
   width: 100%;
@@ -79,8 +79,12 @@ export const RulingWrapper = styled.div<{ isListMode?: boolean }>`
 
   &:before {
     ${thumbInsert}
-    background-color: rgba(${({ theme }) => theme.colors.colorGreenPositive}, 0.8);
-    background-image: url('${thumbUp}');
+    background-color:  ${(props) =>
+      props.isPositiveRuling
+        ? `rgba(${props.theme.colors.colorGreenPositive}, 0.8)`
+        : `rgba(${props.theme.colors.colorYellowNegative}, 0.6)`};
+    background-image: ${(props) =>
+      props.isPositiveRuling ? `url('${thumbUp}')` : `url('${thumbDown}')`};
     top: 0;
     left: 0px;
   }
@@ -97,7 +101,7 @@ export const RulingWrapperRight = styled.div<{ isListMode?: boolean }>`
   align-self: ${(props) => (!props.isListMode ? 'auto' : 'center')};
 `
 
-export const RulingName = styled.h3<{ isListMode?: boolean }>`
+export const RulingName = styled.h3<{ isListMode?: boolean; isPositiveRuling?: boolean }>`
   position: relative;
   margin: 0;
 
@@ -107,8 +111,12 @@ export const RulingName = styled.h3<{ isListMode?: boolean }>`
 
   &:before {
     ${thumbInsert}
-    background-color: rgba(${({ theme }) => theme.colors.colorGreenPositive}, 0.8);
-    background-image: url('${thumbUp}');
+    background-color:  ${(props) =>
+      props.isPositiveRuling
+        ? `rgba(${props.theme.colors.colorGreenPositive}, 0.8)`
+        : `rgba(${props.theme.colors.colorYellowNegative}, 0.6)`};
+    background-image: ${(props) =>
+      props.isPositiveRuling ? `url('${thumbUp}')` : `url('${thumbDown}')`};
     bottom: 0;
     transform: translateX(-36px);
     left: 0px;
@@ -116,8 +124,8 @@ export const RulingName = styled.h3<{ isListMode?: boolean }>`
 
   span:last-of-type {
     color: ${({ theme }) => theme.colors.colorWhite};
-    font-size: 30px;
-    line-height: 36px;
+    font-size: 2.5rem;
+    line-height: 3rem;
     margin: 0;
     margin-bottom: 7px;
     padding: 0;
@@ -128,12 +136,18 @@ export const RulingName = styled.h3<{ isListMode?: boolean }>`
     -webkit-box-orient: vertical;
     position: relative;
   }
+
+  @media (${({ theme }) => theme.device.tablet}) {
+    span:last-of-type {
+      font-size: 2rem;
+    }
+  }
 `
 
 export const RulingDescription = styled.p`
   color: ${({ theme }) => theme.colors.colorWhite};
-  font-size: 15px;
-  line-height: 18px;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
   margin: 0;
   margin-bottom: 12px;
   overflow: hidden;
@@ -141,16 +155,30 @@ export const RulingDescription = styled.p`
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+  @media (${({ theme }) => theme.device.tablet}) {
+    font-size: 1rem;
+  }
 `
 
 export const RulingTimeStamp = styled.span`
   color: ${({ theme }) => theme.colors.colorWhite};
-  font-size: 12px;
-  line-height: 14.4px;
+  font-size: 1rem;
+  line-height: 1.2rem;
   margin: 0;
   margin-bottom: 12px;
   display: block;
   text-align: right;
+  span:last-of-type {
+    text-transform: capitalize;
+  }
+
+  @media (${({ theme }) => theme.device.tablet}) {
+    font-size: 1.0714rem;
+  }
+
+  @media (${({ theme }) => theme.device.desktop}) {
+    font-size: 0.833rem;
+  }
 `
 
 export const RulingButtons = styled.div`
@@ -221,11 +249,11 @@ const gauge = `
   }
 `
 
-export const RulingUpGauge = styled.div`
+export const RulingUpGauge = styled.div<{ percentaje?: string }>`
   ${gauge}
   justify-content: flex-start;
 
-  width: 30%;
+  width: ${(props) => props.percentaje}%;
   background-color: rgba(${({ theme }) => theme.colors.colorGreenPositive}, 0.6);
 
   span {
@@ -240,11 +268,11 @@ export const RulingUpGauge = styled.div`
   }
 `
 
-export const RulingDownGauge = styled.div`
+export const RulingDownGauge = styled.div<{ percentaje?: string }>`
   ${gauge}
   justify-content: flex-end;
 
-  width: 70%;
+  width: ${(props) => props.percentaje}%;
   background-color: rgba(${({ theme }) => theme.colors.colorYellowNegative}, 0.6);
 
   span {
