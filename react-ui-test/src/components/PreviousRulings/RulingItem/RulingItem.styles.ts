@@ -56,6 +56,8 @@ export const Ruling = styled.div<{ isListMode?: boolean }>`
     z-index: 0;
   }
 
+  %:hover
+
   @media (${({ theme }) => theme.device.tablet}) {
     max-width: ${(props) => (!props.isListMode ? '350px' : '100%')};
   }
@@ -102,18 +104,18 @@ export const RulingWrapper = styled.div<{ isListMode?: boolean; isPositiveRuling
   }
 `
 
-export const RulingWrapperLeft = styled.div<{ isListMode?: boolean }>`
-  width: ${(props) => (!props.isListMode ? '100%' : 'calc(100% - 190px)')};
+export const WrapperLeft = styled.div<{ isListMode?: boolean }>`
+  width: ${(props) => (!props.isListMode ? '100%' : 'calc(100% - 210px)')};
   padding-right: ${(props) => (!props.isListMode ? '0' : '30px')};
   align-self: ${(props) => (!props.isListMode ? 'auto' : 'center')};
 `
 
-export const RulingWrapperRight = styled.div<{ isListMode?: boolean }>`
-  width: ${(props) => (!props.isListMode ? '100%' : '190px')};
+export const WrapperRight = styled.div<{ isListMode?: boolean }>`
+  width: ${(props) => (!props.isListMode ? '100%' : '210px')};
   align-self: ${(props) => (!props.isListMode ? 'auto' : 'center')};
 `
 
-export const RulingName = styled.h3<{ isListMode?: boolean; isPositiveRuling?: boolean }>`
+export const NameTitle = styled.h3<{ isListMode?: boolean; isPositiveRuling?: boolean }>`
   position: relative;
   margin: 0;
 
@@ -156,7 +158,7 @@ export const RulingName = styled.h3<{ isListMode?: boolean; isPositiveRuling?: b
   }
 `
 
-export const RulingDescription = styled.p`
+export const Description = styled.p`
   color: ${({ theme }) => theme.colors.colorWhite};
   font-size: 1.25rem;
   line-height: 1.5rem;
@@ -172,7 +174,7 @@ export const RulingDescription = styled.p`
   }
 `
 
-export const RulingTimeStamp = styled.span`
+export const TimeStamp = styled.span`
   color: ${({ theme }) => theme.colors.colorWhite};
   font-size: 1rem;
   line-height: 1.2rem;
@@ -199,15 +201,28 @@ export const RulingButtons = styled.div`
   justify-content: flex-end;
 `
 
-export const RulingButton = styled.button`
+export const ThumbVoteButton = styled.button`
   ${({ theme }) => theme.mixins.iconButton}
   margin-right: 12px;
   display: flex;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 100ms ease-in;
 
   &:before {
     ${thumbInsert}
     position: relative;
     display: inline-block;
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+
+  &:active,
+  &:focus,
+  &:hover {
+    border-color: ${({ theme }) => theme.colors.colorWhite};
   }
 
   &[aria-label='thumbs up'] {
@@ -223,19 +238,41 @@ export const RulingButton = styled.button`
   }
 `
 
-export const RulingVoteButton = styled.button`
+export const VoteButton = styled.button`
   -webkit-appearance: none;
-  background-color: ${({ theme }) => theme.colors.colorDarkerBackground};
+  cursor: pointer;
+  background-color: ${({ theme }) => theme.colors.colorDarkBackground};
   font-size: 15px;
   line-height: 18px;
   margin: 0;
   color: ${({ theme }) => theme.colors.colorWhite};
   text-align: center;
   border: 1px solid ${({ theme }) => theme.colors.colorWhite};
-  padding: 8px 19px;
+  padding: 8px 0;
+  width: 107px;
+  transition: all 100ms ease-in;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.colorDarkBackground};
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  &[disabled] {
+    background-color: ${({ theme }) => theme.colors.colorDarkerBackground};
+    cursor: default;
+    &:hover {
+      background-color: ${({ theme }) => theme.colors.colorDarkerBackground};
+    }
+    &:active {
+      transform: scale(1);
+    }
+  }
 `
 
-export const RulingBottomGauge = styled.div`
+export const BottomGauge = styled.div`
   display: flex;
   flex-flow: row wrap;
   width: 100%;
@@ -261,7 +298,7 @@ const gauge = `
   }
 `
 
-export const RulingUpGauge = styled.div<{ percentaje?: string }>`
+export const UpGauge = styled.div<{ percentaje?: string }>`
   ${gauge}
   justify-content: flex-start;
 
@@ -280,7 +317,7 @@ export const RulingUpGauge = styled.div<{ percentaje?: string }>`
   }
 `
 
-export const RulingDownGauge = styled.div<{ percentaje?: string }>`
+export const DownGauge = styled.div<{ percentaje?: string }>`
   ${gauge}
   justify-content: flex-end;
 
