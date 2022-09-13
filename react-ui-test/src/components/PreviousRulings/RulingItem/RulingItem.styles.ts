@@ -21,7 +21,7 @@ const showUp = keyframes`
   }
 `
 
-export const Ruling = styled.div<{ isListMode?: boolean }>`
+export const Ruling = styled.article<{ isListMode?: boolean }>`
   position: relative;
   overflow: hidden;
   max-width: ${(props) => (!props.isListMode ? '96%' : '100%')};
@@ -56,9 +56,7 @@ export const Ruling = styled.div<{ isListMode?: boolean }>`
     z-index: 0;
   }
 
-  %:hover
-
-  @media (${({ theme }) => theme.device.tablet}) {
+  %:hover @media (${({ theme }) => theme.device.tablet}) {
     max-width: ${(props) => (!props.isListMode ? '350px' : '100%')};
   }
 `

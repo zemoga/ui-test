@@ -134,7 +134,7 @@ const RulingItem = ({ data, isListMode }: RulingItemDataTypes) => {
   }, [isListMode])
 
   return (
-    <Ruling isListMode={isListMode}>
+    <Ruling isListMode={isListMode} tabIndex={0}>
       <RulingImage
         srcSet={`./assets/rulings_images/${imageFileName} 750w, ./assets/rulings_images/${imageFileName2X} 1440w`}
         sizes='(min-width: 750px) 1440px, 100vw'
@@ -144,10 +144,10 @@ const RulingItem = ({ data, isListMode }: RulingItemDataTypes) => {
       />
       <RulingWrapper isListMode={isListMode} isPositiveRuling={isPositiveRuling}>
         <WrapperLeft isListMode={isListMode}>
-          <NameTitle isListMode={isListMode} isPositiveRuling={isPositiveRuling}>
+          <NameTitle isListMode={isListMode} isPositiveRuling={isPositiveRuling} tabIndex={0}>
             <span>{data.name}</span>
           </NameTitle>
-          <Description>{data.description}</Description>
+          <Description tabIndex={0}>{data.description}</Description>
         </WrapperLeft>
         <WrapperRight isListMode={isListMode}>
           <TimeStamp>
@@ -172,7 +172,13 @@ const RulingItem = ({ data, isListMode }: RulingItemDataTypes) => {
                 />
               </>
             )}
-            <VoteButton disabled={!isVotingEnabled} onClick={vote}>
+            <VoteButton
+              disabled={!isVotingEnabled}
+              onClick={vote}
+              aria-label={alreadyVoted ? 'Vote Again' : 'Vote Now'}
+              name={alreadyVoted ? 'Vote Again' : 'Vote Now'}
+              type='button'
+            >
               {alreadyVoted ? 'Vote Again' : 'Vote Now'}
             </VoteButton>
           </RulingButtons>

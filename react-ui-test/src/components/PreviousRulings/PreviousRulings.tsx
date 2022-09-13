@@ -85,11 +85,11 @@ const PreviousRulings = () => {
     <>
       <RulingHeading onChangeView={viewSlectorValue} isListMode={isListMode} />
       {previousRulingsList.length !== 0 && (
-        <>
+        <section>
           {!isMobile && <RulingsGrid isListMode={isListMode}>{renderItems()}</RulingsGrid>}
 
           {isMobile && <Slider {...sliderSettings}>{renderItems()}</Slider>}
-        </>
+        </section>
       )}
     </>
   )
