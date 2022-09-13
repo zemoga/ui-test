@@ -21,14 +21,14 @@ const Navigation = () => {
           </svg>
         </NavHamburguer>
         <NavLinks>
-          <li role="menuitem">
-            <a href='#'>Past Trials</a>
+          <li role="presentation">
+            <a role="menuitem" href='#'>Past Trials</a>
           </li>
-          <li role="menuitem">
-            <a href='#'>How It Works</a>
+          <li role="presentation">
+            <a role="menuitem" href='#'>How It Works</a>
           </li>
-          <li role="menuitem">
-            <a href='#'>Login / Sign Up</a>
+          <li role="presentation">
+            <a role="menuitem" href='#'>Login / Sign Up</a>
           </li>
           <li role="menuitem">
             <NavSearchInput aria-label='search' type='text' />
