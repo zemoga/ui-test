@@ -1,14 +1,15 @@
 import { createGlobalStyle } from 'styled-components'
+import { ThemeTypes } from './theme';
 
-interface ThemeTypes {
-  theme: any
+type GlobalProps = {
+  theme: ThemeTypes
 }
 
-export default createGlobalStyle`
+export default createGlobalStyle<GlobalProps>`
     html, body {
         width: 100%;
         margin: 0;
-        background-color: ${({ theme }: ThemeTypes) => theme.colors.colorWhite};
+        background-color: ${({ theme }) => theme.colors.colorWhite};
         font-family: 'Lato', sans-serif;
         font-size: 12px;
         font-weight: 400;
@@ -23,7 +24,7 @@ export default createGlobalStyle`
     }
     
     a, a:visited {
-        color: ${({ theme }: ThemeTypes) => theme.colors.colorWhite};
+        color: ${({ theme }) => theme.colors.colorWhite};
     }
     
     button {
@@ -38,7 +39,7 @@ export default createGlobalStyle`
     
     hr[role="separator"] {
         border: 0 none;
-        border-bottom: 2px dotted ${({ theme }: ThemeTypes) => theme.colors.colorDarkGray};
+        border-bottom: 2px dotted ${({ theme }) => theme.colors.colorDarkGray};
         margin: 1.5rem 1rem;
     }
 
@@ -59,13 +60,13 @@ export default createGlobalStyle`
         font-size: 2rem;
     }
     
-    @media (${({ theme }: ThemeTypes) => theme.device.tablet}) {
+    @media (${({ theme }) => theme.device.tablet}) {
         html, body {
             font-size: 14px;
         }
     }
 
-    @media (${({ theme }: ThemeTypes) => theme.device.desktop}) {
+    @media (${({ theme }) => theme.device.desktop}) {
         html, body {
             font-size: 18px;
         }

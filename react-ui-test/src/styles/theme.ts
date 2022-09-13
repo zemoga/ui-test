@@ -1,4 +1,27 @@
-const theme = {
+export type ThemeTypes = {
+  colors: {
+    colorYellowNegative: string
+    colorGreenPositive: string
+    colorDarkBackground: string
+    colorDarkerBackground: string
+    colorDarkerGray: string
+    colorDarkGray: string
+    colorLightGray: string
+    colorLightBackground: string
+    colorLighterBackground: string
+    colorWhite: string
+    colorBlack: string
+  },
+  device: {
+    small: string
+    custom500: string
+    tablet: string
+    desktop: string
+  },
+  mixins: object,
+}
+
+const theme:ThemeTypes = {
   colors: {
     colorYellowNegative: '249, 173, 29',
     colorGreenPositive: '60, 187, 180',
@@ -69,5 +92,3 @@ export default {
   ...theme,
   mixins: { ...mixins },
 }
-
-// export default theme;
