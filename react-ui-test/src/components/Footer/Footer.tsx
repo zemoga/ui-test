@@ -8,13 +8,13 @@ const Footer = () => {
         <FooterContainer>
           <FooterLinks>
             <ul>
-              <li>
+              <li role="menuitem">
                 <a href='#'>Terms and Conditions</a>
-              </li>
-              <li>
+              </li >
+              <li role="menuitem">
                 <a href='#'>Privacy Policy</a>
               </li>
-              <li>
+              <li role="menuitem">
                 <a href='#'>Contact Us</a>
               </li>
             </ul>
@@ -22,7 +22,7 @@ const Footer = () => {
           <FooterSocial>
             <span>Follow us</span>
             <ul>
-              <li>
+              <li role="menuitem">
                 <a href='#'>
                   <svg width='24' height='24' xmlns='http://www.w3.org/2000/svg'>
                     <path
@@ -33,7 +33,7 @@ const Footer = () => {
                   </svg>
                 </a>
               </li>
-              <li>
+              <li role="menuitem">
                 <a href='#'>
                   <svg width='26' height='23' xmlns='http://www.w3.org/2000/svg'>
                     <path

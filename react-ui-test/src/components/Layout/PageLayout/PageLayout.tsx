@@ -14,7 +14,7 @@ const PageLayout = () => {
       <Header />
       <Container>
         <BannerTop />
-        <main role="main">
+        <main>
           <PreviousRulings />
         </main>
         <BannerBottom />

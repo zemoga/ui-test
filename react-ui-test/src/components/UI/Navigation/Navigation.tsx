@@ -13,7 +13,7 @@ const Navigation = () => {
   return (
     <Nav role='navigation'>
       <Container>
-        <NavLogo>Rule of thumb.</NavLogo>
+        <NavLogo tabIndex={0}>Rule of thumb.</NavLogo>
 
         <NavHamburguer name='Open Menu' className='icon-button'>
           <svg width='25' height='20' xmlns='http://www.w3.org/2000/svg'>
@@ -21,16 +21,16 @@ const Navigation = () => {
           </svg>
         </NavHamburguer>
         <NavLinks>
-          <li>
+          <li role="menuitem">
             <a href='#'>Past Trials</a>
           </li>
-          <li>
+          <li role="menuitem">
             <a href='#'>How It Works</a>
           </li>
-          <li>
+          <li role="menuitem">
             <a href='#'>Login / Sign Up</a>
           </li>
-          <li>
+          <li role="menuitem">
             <NavSearchInput aria-label='search' type='text' />
             <NavSearchButton name='Search' type='submit'>
               <img src={SearchIcon} alt='search' />

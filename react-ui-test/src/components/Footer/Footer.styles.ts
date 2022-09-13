@@ -18,7 +18,7 @@ export const FooterContainer = styled.div`
   }
 `
 
-export const FooterLinks = styled.div`
+export const FooterLinks = styled.nav`
   li {
     padding: 0.5rem 0;
     font-size: 1.25rem;
@@ -45,7 +45,7 @@ export const FooterLinks = styled.div`
   }
 `
 
-export const FooterSocial = styled.div`
+export const FooterSocial = styled.nav`
   > span {
     color: ${({ theme }) => theme.colors.colorDarkerGray};
     font-size: 1.25rem;

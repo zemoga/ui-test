@@ -23,7 +23,7 @@ import ThumbsDown from '../../styles/img/thumbs-down.svg' // eslint-disable-line
 
 const Header = () => {
   return (
-    <Hero>
+    <Hero tabIndex={0}>
       <HeroBackground
         srcSet={`${HeroImage} 750w, ${HeroImageX2} 1440w`}
         sizes='(min-width: 750px) 1440px, 100vw'

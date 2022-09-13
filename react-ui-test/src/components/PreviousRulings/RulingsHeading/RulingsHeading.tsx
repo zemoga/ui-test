@@ -8,7 +8,7 @@ interface RulingHeadingTypes {
 const RulingHeading = ({ onChangeView, isListMode }: RulingHeadingTypes) => {
   return (
     <RulingsHeadingWrapper>
-      <HeadingTitle>Previous Rulings</HeadingTitle>
+      <HeadingTitle tabIndex={0}>Previous Rulings</HeadingTitle>
       <HeadingControl name='list view' onChange={onChangeView} value={isListMode ? 'list' : 'grid'}>
         <option value='list'>List</option>
         <option value='grid'>Grid</option>

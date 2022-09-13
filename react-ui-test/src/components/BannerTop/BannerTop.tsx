@@ -2,7 +2,7 @@ import { Banner, BannerLeft, BannerRight, BannerButton } from './BannerTop.style
 
 const BannerTop = () => {
   return (
-    <Banner role='doc-tip' aria-label='Speak Out'>
+    <Banner role='doc-tip' aria-label='Speak Out' tabIndex={0}>
       <BannerLeft>
         <span>Speak out. Be heard.</span>
         <span>Be counted</span>

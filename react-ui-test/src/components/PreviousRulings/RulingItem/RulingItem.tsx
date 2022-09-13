@@ -149,7 +149,7 @@ const RulingItem = ({ data, isListMode }: RulingItemDataTypes) => {
           </NameTitle>
           <Description tabIndex={0}>{data.description}</Description>
         </WrapperLeft>
-        <WrapperRight isListMode={isListMode}>
+        <WrapperRight isListMode={isListMode} tabIndex={0}>
           <TimeStamp>
             {!alreadyVoted ? (
               <>
@@ -161,7 +161,7 @@ const RulingItem = ({ data, isListMode }: RulingItemDataTypes) => {
               <span>Thank you for your vote!</span>
             )}
           </TimeStamp>
-          <RulingButtons>
+          <RulingButtons tabIndex={0} role='group'>
             {!alreadyVoted && (
               <>
                 <ThumbVoteButton className='icon-button' aria-label='thumbs up' onClick={like} />
@@ -183,12 +183,18 @@ const RulingItem = ({ data, isListMode }: RulingItemDataTypes) => {
             </VoteButton>
           </RulingButtons>
         </WrapperRight>
-        <BottomGauge>
-          <UpGauge percentaje={positivePercentaje}>
-            <span>{positivePercentaje}%</span>
+        <BottomGauge tabIndex={0}>
+          <UpGauge
+            percentaje={positivePercentaje}
+            aria-label={`Positive votes ${positivePercentaje}%`}
+          >
+            <span aria-hidden={true}>{positivePercentaje}%</span>
           </UpGauge>
-          <DownGauge percentaje={negativePercentaje}>
-            <span>{negativePercentaje}%</span>
+          <DownGauge
+            percentaje={negativePercentaje}
+            aria-label={`Negative votes ${negativePercentaje}%`}
+          >
+            <span aria-hidden={true}>{negativePercentaje}%</span>
           </DownGauge>
         </BottomGauge>
       </RulingWrapper>
