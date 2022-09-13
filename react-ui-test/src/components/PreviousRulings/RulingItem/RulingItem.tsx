@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { RulingDataTypes } from '../PreviousRulings.types'
+import { RulingItemDataTypes, localDataTypes } from './RulingItems.types'
 import Moment from 'react-moment'
 import moment from 'moment'
 
@@ -20,11 +20,6 @@ import {
   WrapperRight,
 } from './RulingItem.styles'
 
-interface RulingItemDataTypes {
-  data: RulingDataTypes
-  isListMode: boolean
-}
-
 const RulingItem = ({ data, isListMode }: RulingItemDataTypes) => {
   const [imageFileName, setImageFileName] = useState<string>('')
   const [imageFileName2X, setImageFileName2X] = useState<string>('')
@@ -40,7 +35,7 @@ const RulingItem = ({ data, isListMode }: RulingItemDataTypes) => {
   const [itemDate, setItemDate] = useState<string>('')
 
   const setImageFilePatter: () => void = () => {
-    const imageName = data.picture.split('.', 1)[0]
+    const imageName: string = data.picture.split('.', 1)[0]
 
     let fullImageFileName = ''
     let fullImageFileName2X = ''
@@ -57,7 +52,7 @@ const RulingItem = ({ data, isListMode }: RulingItemDataTypes) => {
     setImageFileName2X(fullImageFileName2X)
   }
 
-  const getPercentaje = (positiveVotes: number, negativeVotes: number) => {
+  const getPercentaje: (a: number, b: number) => void = (positiveVotes, negativeVotes) => {
     const fullPercentaje = positiveVotes + negativeVotes
 
     const percentajePositive = (positiveVotes * 100) / fullPercentaje
@@ -109,13 +104,13 @@ const RulingItem = ({ data, isListMode }: RulingItemDataTypes) => {
   }
 
   useEffect(() => {
-    const itemStoragedData = localStorage.getItem(data.name)
+    const itemStoragedData: string | null = localStorage.getItem(data.name)
     let itemPositiveVotes = data.votes.positive
     let itemNegativeVotes = data.votes.negative
     let itemDate = data.lastUpdated
 
     if (itemStoragedData) {
-      const localData = JSON.parse(itemStoragedData)
+      const localData: localDataTypes = JSON.parse(itemStoragedData)
       itemPositiveVotes = localData.positive
       itemNegativeVotes = localData.negative
       itemDate = localData.lastUpdated

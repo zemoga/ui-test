@@ -1,7 +1,7 @@
 import { RulingsHeadingWrapper, HeadingTitle, HeadingControl } from './RulingsHeading.styles'
 
 interface RulingHeadingTypes {
-  onChangeView: (e: any) => void,
+  onChangeView: (event: React.ChangeEvent<HTMLSelectElement>) => void,
   isListMode: boolean
 }
 

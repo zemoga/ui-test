@@ -1,4 +1,4 @@
-export type RulingDataTypes = {
+export interface RulingDataTypes {
   name: string
   description: string
   category: string
@@ -8,4 +8,14 @@ export type RulingDataTypes = {
     positive: number
     negative: number
   }
+}
+export interface sliderSettingsTypes {
+  dots: boolean
+  infinite: boolean
+  speed: number
+  slidesToShow: number
+  slidesToScroll: number
+  className: string
+  centerMode: boolean
+  centerPadding: string
 }

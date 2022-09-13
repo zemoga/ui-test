@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 import RulingHeading from './RulingsHeading/RulingsHeading'
 import RulingItem from './RulingItem/RulingItem'
-import { RulingDataTypes } from './PreviousRulings.types'
-import { RulingsGrid } from './PreviousRulings.styles'
 import Slider from 'react-slick'
+import { RulingDataTypes, sliderSettingsTypes } from './PreviousRulings.types'
+import { RulingsGrid } from './PreviousRulings.styles'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
@@ -12,20 +12,20 @@ const PreviousRulings = () => {
   const [isListMode, setIsListMode] = useState<boolean>(true)
   const [isMobile, setIsMobile] = useState<boolean>(false)
 
-  const fetchData = async () => {
+  const fetchData: () => Promise<void> = async () => {
     const data = await fetch('data.json')
     const response = await data.json()
     setPreviousRulingsList(response.data)
   }
 
-  const viewSlectorValue = (event: any) => {
-    const slectorValue = event.target.value
+  const viewSlectorValue: (e: React.ChangeEvent<HTMLSelectElement>) => void = (event) => {
+    const slectorValue: string = event.target.value
     slectorValue === 'list' && setIsListMode(true)
     slectorValue === 'grid' && setIsListMode(false)
   }
 
-  const renderItems = () => {
-    let items
+  const renderItems:() => JSX.Element[] = () => {
+    let items: JSX.Element[] = []
 
     if (isMobile) {
       items = previousRulingsList.map((ruling, index) => (
@@ -70,7 +70,7 @@ const PreviousRulings = () => {
     }
   }, [])
 
-  const sliderSettings = {
+  const sliderSettings: sliderSettingsTypes = {
     dots: false,
     infinite: true,
     speed: 500,
