@@ -43,9 +43,10 @@ export default createGlobalStyle<GlobalProps>`
         margin: 1.5rem 1rem;
     }
 
-    main[role="main"] {
+    main {
         padding: 0 1rem;
         margin-top: 2rem;
+        overflow: hidden;
     }
     
     main h2,

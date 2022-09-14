@@ -21,47 +21,7 @@ const showUp = keyframes`
   }
 `
 
-export const Ruling = styled.article<{ isListMode?: boolean }>`
-  position: relative;
-  overflow: hidden;
-  max-width: ${(props) => (!props.isListMode ? '96%' : '100%')};
-  margin: ${(props) => (!props.isListMode ? '0 auto 15px' : '0 0 15px')};
-  opacity: 0;
-  animation: ${showUp} 1s linear forwards;
-
-  &:before,
-  &:after {
-    display: ${(props) => (!props.isListMode ? 'none' : 'block')};
-  }
-
-  &:before {
-    content: '';
-    position: absolute;
-    width: 234px;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.0001) 70%, #888888 100%);
-    z-index: 0;
-  }
-
-  &:after {
-    content: '';
-    position: absolute;
-    width: calc(100% - 234px);
-    height: 100%;
-    top: 0;
-    right: 0;
-    background: linear-gradient(90deg, #888888 0%, #666666 50%, rgba(51, 51, 51, 0.6) 71.88%);
-    z-index: 0;
-  }
-
-  %:hover @media (${({ theme }) => theme.device.tablet}) {
-    max-width: ${(props) => (!props.isListMode ? '350px' : '100%')};
-  }
-`
-export const RulingImage = styled.img<{ isListMode?: boolean }>`
-  width: ${(props) => (!props.isListMode ? '100%' : '234px')};
+export const RulingImage = styled.img`
   margin-bottom: -3px;
 
   @media (${({ theme }) => theme.device.tablet}) {
@@ -69,25 +29,16 @@ export const RulingImage = styled.img<{ isListMode?: boolean }>`
   }
 `
 
-export const RulingWrapper = styled.div<{ isListMode?: boolean; isPositiveRuling?: boolean }>`
+export const RulingWrapper = styled.div<{ isPositiveRuling?: boolean }>`
   position: absolute;
   z-index: 1;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: ${(props) => (!props.isListMode ? 'column' : 'row')};
-  align-items: ${(props) => (!props.isListMode ? 'center' : 'auto')};
-  height: ${(props) => (!props.isListMode ? 'auto' : '100%')};
   bottom: 0;
   left: 0;
-  padding-bottom: ${(props) => (!props.isListMode ? '48px' : '36px')};
-  padding-left: ${(props) => (!props.isListMode ? '36px' : '234px')};
   padding-right: 36px;
   box-sizing: border-box;
-
-  &:before {
-    display: ${(props) => (!props.isListMode ? 'none' : 'block')};
-  }
 
   &:before {
     ${thumbInsert}
@@ -102,24 +53,9 @@ export const RulingWrapper = styled.div<{ isListMode?: boolean; isPositiveRuling
   }
 `
 
-export const WrapperLeft = styled.div<{ isListMode?: boolean }>`
-  width: ${(props) => (!props.isListMode ? '100%' : 'calc(100% - 210px)')};
-  padding-right: ${(props) => (!props.isListMode ? '0' : '30px')};
-  align-self: ${(props) => (!props.isListMode ? 'auto' : 'center')};
-`
-
-export const WrapperRight = styled.div<{ isListMode?: boolean }>`
-  width: ${(props) => (!props.isListMode ? '100%' : '210px')};
-  align-self: ${(props) => (!props.isListMode ? 'auto' : 'center')};
-`
-
-export const NameTitle = styled.h3<{ isListMode?: boolean; isPositiveRuling?: boolean }>`
+export const NameTitle = styled.h3<{ isPositiveRuling?: boolean }>`
   position: relative;
   margin: 0;
-
-  &:before {
-    display: ${(props) => (!props.isListMode ? 'block' : 'none')};
-  }
 
   &:before {
     ${thumbInsert}
@@ -331,5 +267,78 @@ export const DownGauge = styled.div<{ percentaje?: string }>`
     background-image: url('${thumbDown}');
     position: relative;
     display: inline-block;
+  }
+`
+
+export const Ruling = styled.article<{ isListMode?: boolean }>`
+  position: relative;
+  overflow: hidden;
+  max-width: ${(props) => (!props.isListMode ? '96%' : '100%')};
+  margin: ${(props) => (!props.isListMode ? '0 auto 15px' : '0 0 15px')};
+  opacity: 0;
+  animation: ${showUp} 1s linear forwards;
+
+  &:before,
+  &:after {
+    display: ${(props) => (!props.isListMode ? 'none' : 'block')};
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 234px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.0001) 70%, #888888 100%);
+    z-index: 0;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: calc(100% - 234px);
+    height: 100%;
+    top: 0;
+    right: 0;
+    background: linear-gradient(90deg, #888888 0%, #666666 50%, rgba(51, 51, 51, 0.6) 71.88%);
+    z-index: 0;
+  }
+
+  @media (${({ theme }) => theme.device.tablet}) {
+    max-width: ${(props) => (!props.isListMode ? '350px' : '100%')};
+  }
+
+  ${RulingImage} {
+    width: ${(props) => (!props.isListMode ? '100%' : '234px')};
+  }
+
+  ${RulingWrapper} {
+    flex-direction: ${(props) => (!props.isListMode ? 'column' : 'row')};
+    align-items: ${(props) => (!props.isListMode ? 'center' : 'auto')};
+    height: ${(props) => (!props.isListMode ? 'auto' : '100%')};
+    padding-bottom: ${(props) => (!props.isListMode ? '48px' : '36px')};
+    padding-left: ${(props) => (!props.isListMode ? '36px' : '234px')};
+
+    &:before {
+      display: ${(props) => (!props.isListMode ? 'none' : 'block')};
+    }
+  }
+
+  .WrapperLeft {
+    width: ${(props) => (!props.isListMode ? '100%' : 'calc(100% - 210px)')};
+    padding-right: ${(props) => (!props.isListMode ? '0' : '30px')};
+    align-self: ${(props) => (!props.isListMode ? 'auto' : 'center')};
+  }
+
+  .WrapperRight {
+    width: ${(props) => (!props.isListMode ? '100%' : '210px')};
+    align-self: ${(props) => (!props.isListMode ? 'auto' : 'center')};
+  }
+
+  ${NameTitle} {
+    &:before {
+      display: ${(props) => (!props.isListMode ? 'block' : 'none')};
+    }
   }
 `

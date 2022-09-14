@@ -16,8 +16,6 @@ import {
   BottomGauge,
   UpGauge,
   DownGauge,
-  WrapperLeft,
-  WrapperRight,
 } from './RulingItem.styles'
 
 const RulingItem = ({ data, isListMode }: RulingItemDataTypes) => {
@@ -135,16 +133,15 @@ const RulingItem = ({ data, isListMode }: RulingItemDataTypes) => {
         sizes='(min-width: 750px) 1440px, 100vw'
         src={`./assets/rulings_images/${imageFileName}`}
         alt={data.name}
-        isListMode={isListMode}
       />
-      <RulingWrapper isListMode={isListMode} isPositiveRuling={isPositiveRuling}>
-        <WrapperLeft isListMode={isListMode}>
-          <NameTitle isListMode={isListMode} isPositiveRuling={isPositiveRuling} tabIndex={0}>
+      <RulingWrapper isPositiveRuling={isPositiveRuling}>
+        <div className='WrapperLeft'>
+          <NameTitle isPositiveRuling={isPositiveRuling} tabIndex={0}>
             <span>{data.name}</span>
           </NameTitle>
           <Description tabIndex={0}>{data.description}</Description>
-        </WrapperLeft>
-        <WrapperRight isListMode={isListMode} tabIndex={0}>
+        </div>
+        <div className='WrapperRight' tabIndex={0}>
           <TimeStamp>
             {!alreadyVoted ? (
               <>
@@ -177,7 +174,7 @@ const RulingItem = ({ data, isListMode }: RulingItemDataTypes) => {
               {alreadyVoted ? 'Vote Again' : 'Vote Now'}
             </VoteButton>
           </RulingButtons>
-        </WrapperRight>
+        </div>
         <BottomGauge tabIndex={0}>
           <UpGauge
             percentaje={positivePercentaje}
