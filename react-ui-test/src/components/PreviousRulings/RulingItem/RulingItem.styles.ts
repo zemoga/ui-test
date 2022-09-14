@@ -278,19 +278,19 @@ export const Ruling = styled.article<{ isListMode?: boolean }>`
   opacity: 0;
   animation: ${showUp} 1s linear forwards;
 
-  &:before,
   &:after {
     display: ${(props) => (!props.isListMode ? 'none' : 'block')};
   }
 
   &:before {
     content: '';
+    display: block;
     position: absolute;
-    width: 234px;
+    width: ${(props) => (!props.isListMode ? '100%' : '234px;')}; 
     height: 100%;
     top: 0;
     left: 0;
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.0001) 70%, #888888 100%);
+    background: ${(props) => (!props.isListMode ? 'linear-gradient(180deg, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.6) 100%);' : 'linear-gradient(90deg, rgba(0, 0, 0, 0.0001) 70%, #888888 100%)')}; ;
     z-index: 0;
   }
 
@@ -301,7 +301,7 @@ export const Ruling = styled.article<{ isListMode?: boolean }>`
     height: 100%;
     top: 0;
     right: 0;
-    background: linear-gradient(90deg, #888888 0%, #666666 50%, rgba(51, 51, 51, 0.6) 71.88%);
+    background: linear-gradient(90deg, #888888 0%, #666666 50%, rgba(51, 51, 51, 0.6) 71.88%); 
     z-index: 0;
   }
 
@@ -340,5 +340,6 @@ export const Ruling = styled.article<{ isListMode?: boolean }>`
     &:before {
       display: ${(props) => (!props.isListMode ? 'block' : 'none')};
     }
+
   }
 `
